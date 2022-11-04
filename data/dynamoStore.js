@@ -34,7 +34,7 @@ async function getAllItems(table) {
         TableName: table
     }
     const client = getClient()
-    const command = ScanCommand(params)
+    const command = new ScanCommand(params)
     const response = await client.send(command)
     return response.Items
 }
